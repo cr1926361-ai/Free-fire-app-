@@ -1,0 +1,6 @@
+{
+  "name": "Free Fire MAX - Battle Royale 3D",
+  "description": "High-octane 3D battle royale game inspired by Free Fire Max with realistic island combat, Gloo Walls, weapon arsenals, and Booyah victories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

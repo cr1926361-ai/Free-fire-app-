@@ -1,0 +1,117 @@
+import { WeaponData } from './types';
+
+export const WEAPON_DEFINITIONS: Record<string, WeaponData> = {
+  ak47: {
+    id: 'ak47',
+    name: 'AK-47',
+    category: 'ar',
+    damage: 38,
+    headshotMultiplier: 3.5, // 133 dmg headshot!
+    fireRate: 9.5, // 9.5 rounds/sec
+    magazineSize: 30,
+    currentAmmo: 30,
+    reserveAmmo: 120,
+    reloadTime: 2.2,
+    range: 120,
+    recoil: 0.035,
+    accuracy: 0.88,
+    color: '#f97316',
+    skinName: 'Flame Dragon',
+    description: 'High caliber assault rifle with massive stopping power and fiery burst damage.',
+  },
+  mp40: {
+    id: 'mp40',
+    name: 'MP40',
+    category: 'smg',
+    damage: 22,
+    headshotMultiplier: 3.2,
+    fireRate: 15.0, // extremely rapid fire!
+    magazineSize: 32,
+    currentAmmo: 32,
+    reserveAmmo: 160,
+    reloadTime: 1.8,
+    range: 65,
+    recoil: 0.02,
+    accuracy: 0.85,
+    color: '#ef4444',
+    skinName: 'Predatory Cobra',
+    description: 'Cobra themed close-combat SMG with devastating rate of fire.',
+  },
+  awm: {
+    id: 'awm',
+    name: 'AWM',
+    category: 'sniper',
+    damage: 150,
+    headshotMultiplier: 3.0, // 450 one-shot headshot!
+    fireRate: 1.0, // bolt action
+    magazineSize: 5,
+    currentAmmo: 5,
+    reserveAmmo: 25,
+    reloadTime: 3.0,
+    range: 250,
+    recoil: 0.08,
+    accuracy: 0.99,
+    color: '#10b981',
+    skinName: 'Arctic Hunter',
+    description: 'Supreme heavy sniper rifle capable of eliminating enemies with a single clean headshot.',
+  },
+  m1887: {
+    id: 'm1887',
+    name: 'M1887',
+    category: 'shotgun',
+    damage: 25, // 8 pellets = 200 point blank!
+    headshotMultiplier: 2.5,
+    fireRate: 2.2,
+    magazineSize: 2,
+    currentAmmo: 2,
+    reserveAmmo: 30,
+    reloadTime: 1.9,
+    range: 35,
+    recoil: 0.09,
+    accuracy: 0.75,
+    color: '#8b5cf6',
+    skinName: 'Rapper Underworld',
+    description: 'Two-shot break-action shotgun that annihilates anyone caught at point blank range.',
+  },
+  scar: {
+    id: 'scar',
+    name: 'SCAR',
+    category: 'ar',
+    damage: 32,
+    headshotMultiplier: 3.3,
+    fireRate: 10.5,
+    magazineSize: 30,
+    currentAmmo: 30,
+    reserveAmmo: 150,
+    reloadTime: 2.0,
+    range: 110,
+    recoil: 0.025,
+    accuracy: 0.92,
+    color: '#06b6d4',
+    skinName: 'Titan Megalodon',
+    description: 'Extremely stable and balanced assault rifle favored by pros for mid-to-long sprays.',
+  },
+  katana: {
+    id: 'katana',
+    name: 'Katana',
+    category: 'melee',
+    damage: 65,
+    headshotMultiplier: 2.0,
+    fireRate: 2.0,
+    magazineSize: 1,
+    currentAmmo: 1,
+    reserveAmmo: 0,
+    reloadTime: 0.1,
+    range: 5,
+    recoil: 0.0,
+    accuracy: 1.0,
+    color: '#ec4899',
+    skinName: 'Blood Moon Blade',
+    description: 'Traditional Japanese blade forged with crimson energy. Swift and silent.',
+  }
+};
+
+export function createWeaponInstance(id: string): WeaponData {
+  const base = WEAPON_DEFINITIONS[id] || WEAPON_DEFINITIONS.ak47;
+  return { ...base };
+}
